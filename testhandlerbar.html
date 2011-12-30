@@ -1,0 +1,19 @@
+<html>
+<head>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.4.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var source = "<p>Author: {{author}}<br> Name: {{name}}</p>"
+    var template = Handlebars.compile(source);
+    var data = {"author":"polka","name":"jl"};
+    $('#target').html(template(data));
+  });
+</script>
+</head>
+<body>
+<div id="target"></div>
+</body>
+</html>
+
+
