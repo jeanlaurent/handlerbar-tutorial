@@ -2,11 +2,20 @@
 <head>
 <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript" src="http://cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.4.js"></script>
+<script id="template" type="text/x-handlebars-template">
+  <p>Author: {{author}}<br> Name: {{name}}</p>
+</script>
+<script id="data" type="application/json">
+{ 
+  "author":"polka",
+  "name":"jl"
+}
+</script>
 <script type="text/javascript">
   $(document).ready(function() {
-    var source = "<p>Author: {{author}}<br> Name: {{name}}</p>"
+    var source = $('#template').html();
     var template = Handlebars.compile(source);
-    var data = {"author":"polka","name":"jl"};
+    var data = $('#data').html();;
     $('#target').html(template(data));
   });
 </script>
